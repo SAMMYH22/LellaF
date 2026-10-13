@@ -1,0 +1,38 @@
+/** LELLA product catalogue. To add a photo, drop a file named like the 'image' path (without extension) in img/products/. Accepted: .webp .jpg .jpeg .png. No file = icon shown. Add weights by adding more variants. */
+const PRODUCTS = [
+    { id: 1, name: "Poulet entier", category: "poulet", icon: "fa-drumstick-bite", image: "img/products/poulet-entier", description: "Frais, certifié halal",
+      variants: [{ id: 1, weight: "", price: 45000, image: "" }], inStock: true },
+    { id: 2, name: "Cuisse", category: "poulet", icon: "fa-drumstick-bite", image: "img/products/cuisse", description: "Frais, certifié halal",
+      variants: [{ id: 1, weight: "", price: 65000, image: "" }], inStock: true },
+    { id: 3, name: "Aile", category: "poulet", icon: "fa-feather", image: "img/products/aile", description: "Frais, certifié halal",
+      variants: [{ id: 1, weight: "", price: 65000, image: "" }], inStock: true },
+    { id: 4, name: "Poulet fumé", category: "poulet", icon: "fa-fire-flame-curved", image: "img/products/poulet-fume", description: "Frais, certifié halal",
+      variants: [{ id: 1, weight: "", price: 65000, image: "" }], inStock: true },
+    { id: 5, name: "Pilon", category: "poulet", icon: "fa-drumstick-bite", image: "img/products/pilon", description: "Frais, certifié halal",
+      variants: [{ id: 1, weight: "", price: 65000, image: "" }], inStock: true },
+    { id: 6, name: "Haut de cuisse", category: "poulet", icon: "fa-drumstick-bite", image: "img/products/haut-de-cuisse", description: "Frais, certifié halal",
+      variants: [{ id: 1, weight: "", price: 55000, image: "" }], inStock: true },
+    { id: 7, name: "Blanc de poulet", category: "poulet", icon: "fa-drumstick-bite", image: "img/products/blanc-de-poulet", description: "Frais, certifié halal",
+      variants: [{ id: 1, weight: "", price: 80000, image: "" }], inStock: true },
+    { id: 8, name: "Gésier", category: "poulet", icon: "fa-bowl-food", image: "img/products/gesier", description: "Frais, certifié halal",
+      variants: [{ id: 1, weight: "", price: 60000, image: "" }], inStock: true },
+    { id: 9, name: "Burger poulet", category: "poulet", icon: "fa-burger", image: "img/products/burger-poulet", description: "Frais, certifié halal",
+      variants: [{ id: 1, weight: "", price: 90000, image: "" }], inStock: true },
+    { id: 10, name: "Merguez poulet", category: "poulet", icon: "fa-hotdog", image: "img/products/merguez-poulet", description: "Frais, certifié halal",
+      variants: [{ id: 1, weight: "", price: 115000, image: "" }], inStock: true },
+    { id: 11, name: "Saucisse poulet", category: "poulet", icon: "fa-hotdog", image: "img/products/saucisse-poulet", description: "Frais, certifié halal",
+      variants: [{ id: 1, weight: "", price: 115000, image: "" }], inStock: true },
+    { id: 12, name: "Burger bœuf", category: "boeuf", icon: "fa-burger", image: "img/products/burger-boeuf", description: "Frais, certifié halal",
+      variants: [{ id: 1, weight: "", price: 90000, image: "" }], inStock: true },
+    { id: 13, name: "Merguez bœuf", category: "boeuf", icon: "fa-hotdog", image: "img/products/merguez-boeuf", description: "Frais, certifié halal",
+      variants: [{ id: 1, weight: "", price: 115000, image: "" }], inStock: true },
+    { id: 14, name: "Saucisse bœuf", category: "boeuf", icon: "fa-hotdog", image: "img/products/saucisse-boeuf", description: "Frais, certifié halal",
+      variants: [{ id: 1, weight: "", price: 115000, image: "" }], inStock: true },
+    { id: 15, name: "Boulette", category: "boeuf", icon: "fa-bowl-food", image: "img/products/boulette", description: "Frais, certifié halal",
+      variants: [{ id: 1, weight: "", price: 90000, image: "" }], inStock: true },
+    { id: 16, name: "Viande hachée", category: "boeuf", icon: "fa-bowl-food", image: "img/products/viande-hachee", description: "Frais, certifié halal",
+      variants: [{ id: 1, weight: "", price: 90000, image: "" }], inStock: true },
+];
+
+function getProductById(id) { return PRODUCTS.find(p => p.id === id); }
+function getProductVariant(pid, vid) { const p = getProductById(pid); return p ? p.variants.find(v => v.id === vid) : null; }
